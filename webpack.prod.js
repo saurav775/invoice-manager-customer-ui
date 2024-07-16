@@ -19,9 +19,9 @@ module.exports = () => {
         filename: "remoteEntry.js",
         remotes: {
           invoice_manager_dashboard_ui:
-            "invoice_manager_dashboard_ui@http://localhost:3000/remoteEntry.js",
+            "invoice_manager_dashboard_ui@https://invoice-manager-dashboard-ui.vercel.app/remoteEntry.js",
           invoice_manager_customer_ui:
-            "invoice_manager_customer_ui@http://localhost:3001/remoteEntry.js",
+            "invoice_manager_customer_ui@https://invoice-manager-customer-ui.vercel.app/remoteEntry.js",
         },
         exposes: {
           "./CustomersPage": "./src/Bootstrap",
