@@ -1,0 +1,58 @@
+@import "./variable";
+@import "./common";
+
+@keyframes snackbar-fade-in {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 1.6rem;
+    opacity: 1;
+  }
+}
+
+.snackbar-container {
+  position: fixed;
+  z-index: $z-index-high;
+  bottom: 1.6rem;
+  left: 1.6rem;
+  height: auto;
+  padding: 1rem 1.6rem;
+  border-radius: 0.6rem;
+  background-color: $theme;
+  color: $white;
+  box-shadow: 2px 2px 4px $box-shadow;
+  @include flex-center;
+  animation: snackbar-fade-in;
+  animation-duration: 1s;
+
+  button {
+    @include flex-center;
+    padding: 0;
+    margin-left: 1.6rem;
+    border: none;
+    border-radius: 50%;
+    height: 2.8rem;
+    width: 2.8rem;
+    text-align: center;
+    background-color: transparent;
+    color: $white;
+    min-width: unset;
+
+    &:hover {
+      background-color: $theme-light;
+    }
+  }
+}
+
+.snackbar-error {
+  background-color: $light-red-bg;
+  border: 1px solid $red-text;
+
+  button {
+    &:hover {
+      background-color: $red-text;
+    }
+  }
+}

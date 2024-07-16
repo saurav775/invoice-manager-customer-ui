@@ -1,0 +1,40 @@
+@import "./variable";
+@import "./common";
+
+.btn {
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 2rem;
+  color: $white;
+  min-width: 8rem;
+  &:hover {
+    opacity: 0.85;
+    cursor: pointer;
+  }
+  &:disabled {
+    opacity: 0.5;
+    &:hover {
+      opacity: 0.5;
+      cursor: no-drop;
+    }
+  }
+}
+
+.btn-primary {
+  background-color: $theme;
+}
+
+.btn-secondary {
+  background-color: $btn-secondary-bg;
+}
+
+.btn-red {
+  background-color: $red-bg;
+}
+
+.btn-transparent {
+  background-color: transparent;
+  color: $black;
+}

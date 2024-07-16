@@ -1,0 +1,40 @@
+@import "./variable";
+@import "./common";
+
+.popup-container {
+  @include bg-overlay;
+  @include flex-center;
+}
+
+.popup-inner {
+  @include flex-column-center;
+  background-color: $white;
+  padding: 2.4rem;
+  border-radius: 6px;
+}
+
+.popup-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  button {
+    padding: 0;
+    min-width: unset;
+    font-size: 2rem;
+  }
+  margin-bottom: 2.4rem;
+}
+
+.popup-body {
+  width: 27.2rem;
+  margin-bottom: 2.4rem;
+}
+
+.popup-footer {
+  @include flex-justify-end;
+  width: 100%;
+  button:not(:last-child) {
+    margin-right: 4px;
+  }
+}

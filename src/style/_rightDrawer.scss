@@ -1,0 +1,77 @@
+@import "./variable";
+@import "./common";
+
+.right-drawer-wrp {
+  @include bg-overlay;
+  @include flex-justify-end;
+  width: 0;
+}
+
+.right-drawer-visible {
+  width: 100vw;
+  -webkit-transition: width 300ms ease-out;
+  -moz-transition: width 300ms ease-out;
+  -o-transition: width 300ms ease-out;
+  transition: width 300ms ease-out;
+}
+
+.right-drawer-content-wrp {
+  width: 32rem;
+  height: calc(100% - 4.8rem);
+  background-color: $white;
+  padding: 2.4rem;
+  @include flex-column;
+  align-items: center;
+  h2 {
+    text-align: center;
+    margin-bottom: 3.6rem;
+  }
+}
+
+.right-drawer-body {
+  flex: 1;
+  width: 100%;
+  form {
+    @include flex-column;
+    justify-content: space-between;
+    height: 100%;
+  }
+}
+
+.right-drawer-actions {
+  align-self: flex-end;
+  button:not(:last-child) {
+    margin-right: 0.8rem;
+  }
+}
+
+.form-element {
+  @include flex-column;
+  &:not(:last-child) {
+    margin-bottom: 2.4rem;
+  }
+  label {
+    line-height: 2;
+  }
+  input, select {
+    padding: 1.2rem;
+    outline: none;
+    border: 1px solid $black;
+    border-radius: 4px;
+  }
+  select {
+    cursor: pointer;
+  }
+  span {
+    color: $red-text;
+    margin-top: 4px;
+    font-size: 1.2rem;
+  }
+}
+
+.form-actions-wrp {
+  @include flex-justify-end;
+    button:not(:last-child) {
+        margin-right: 0.8rem;
+    }
+}

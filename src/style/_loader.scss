@@ -1,0 +1,26 @@
+@import "./variable";
+@import "./common";
+
+.loader-container {
+  @include flex-center;
+}
+
+.fixed-loader {
+  display: block;
+  @include fixed-center;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.spinner {
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 50%;
+  border: 5px solid $border-grey;
+  border-right-color: $theme;
+  animation: spin 0.6s infinite linear;
+}
