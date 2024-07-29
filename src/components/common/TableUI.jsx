@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import Button from "invoice_manager_customer_ui/Button";
+import Pagination from "./Pagination";
 import {
   ACTIONS,
   INVOICE_ID,
@@ -18,15 +19,19 @@ const proptypes = {
   actions: PropTypes.array,
   handleInputChange: PropTypes.func,
   isAddInvoicePage: PropTypes.bool,
+  itemsPerPage: PropTypes.number,
 };
 
 const TableUI = (props) => {
+  const [currentPage, setCurrentPage] = useState(1);
+
   const {
     rows,
     columns,
     actions = [],
     handleInputChange = () => {},
     isAddInvoicePage = false,
+    itemsPerPage = 5,
   } = props;
 
   /**
@@ -58,46 +63,61 @@ const TableUI = (props) => {
     return <>{row[column] || "---"}</>;
   };
 
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const selectedRows = rows.slice(startIndex, startIndex + itemsPerPage);
+
   return (
-    <table>
-      <thead>
-        <tr>
-          {columns.map((column) => (
-            <th scope="col" key={column}>
-              {camelToSentenceCase(column)}
-            </th>
-          ))}
-          {!!actions && !!actions.length && <th>{ACTIONS}</th>}
-        </tr>
-      </thead>
-      <tbody>
-        {!rows?.length && <tr className="no-record-found">No record found.</tr>}
-        {rows.map((row) => (
-          <tr key={row[Object.keys(row)[0]]}>
-            {columns.map((column, index) => (
-              <td
-                data-label={column}
-                key={row[column] + row[Object.keys(row)[0]] + index}
-              >
-                {showColumn(row, column)}
-              </td>
+    <>
+      <table>
+        <thead>
+          <tr>
+            {columns.map((column) => (
+              <th scope="col" key={column}>
+                {camelToSentenceCase(column)}
+              </th>
             ))}
-            {!!actions && !!actions.length && (
-              <td className="actions-container">
-                {actions.map(({ label, handleClick, variant }) => (
-                  <Button
-                    label={label}
-                    handleClick={(event) => handleClick(event, row)}
-                    variant={variant}
-                    key={label}
-                  />
-                ))}
-              </td>
-            )}
+            {!!actions && !!actions.length && <th>{ACTIONS}</th>}
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {!rows?.length && (
+            <tr className="no-record-found">
+              <td>No record found.</td>
+            </tr>
+          )}
+          {selectedRows.map((row) => (
+            <tr key={row[Object.keys(row)[0]]}>
+              {columns.map((column, index) => (
+                <td
+                  data-label={column}
+                  key={row[column] + row[Object.keys(row)[0]] + index}
+                >
+                  {showColumn(row, column)}
+                </td>
+              ))}
+              {!!actions && !!actions.length && (
+                <td className="actions-container">
+                  {actions.map(({ label, handleClick, variant }) => (
+                    <Button
+                      label={label}
+                      handleClick={(event) => handleClick(event, row)}
+                      variant={variant}
+                      key={label}
+                    />
+                  ))}
+                </td>
+              )}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <Pagination
+        totalItems={rows.length}
+        itemsPerPage={itemsPerPage}
+        currentPage={currentPage}
+        onPageChange={setCurrentPage}
+      />
+    </>
   );
 };
 

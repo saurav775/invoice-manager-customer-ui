@@ -5,6 +5,7 @@ const Button = (props) => (
     onClick={props.handleClick}
     className={`btn btn-${props.variant}`}
     type={props.type}
+    disabled={props.disabled}
   >
     {props.label}
   </button>

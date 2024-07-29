@@ -39,10 +39,23 @@ table td {
 }
 
 .no-record-found {
-  text-align: center
+  text-align: center;
+  td {
+    background-color: transparent;
+  }
 }
 
-@media screen and (max-width: 767px) {
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.6rem;
+  button {
+    border-radius: 0.6rem;
+    border: 1px solid $white;
+  }
+}
+
+@media screen and (max-width: 1023px) {
   table {
     border: 0;
   }
