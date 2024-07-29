@@ -48,7 +48,6 @@ const Popup = (props) => {
 Popup.propTypes = propTypes;
 
 const mapStateToProps = ({ popup }) => ({
-  isOpen: popup.isOpen,
   message: popup.message,
   title: popup.title,
   callback: popup.callback,

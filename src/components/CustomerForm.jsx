@@ -88,7 +88,11 @@ const CustomerForm = (props) => {
 
   return (
     <RightDrawer title={drawerTitle} isOpen={isOpen}>
-      <form onSubmit={handleCutomerFormSubmit} ref={formRef}>
+      <form
+        onSubmit={handleCutomerFormSubmit}
+        ref={formRef}
+        data-testid="customer-form"
+      >
         <div className="form-input-wrp">
           <div className="form-element">
             <label htmlFor="customer_name">{NAME}</label>

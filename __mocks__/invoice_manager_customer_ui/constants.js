@@ -1,0 +1,100 @@
+export const ROOT = "root";
+export const INVOICE_MANAGER = "Invoice manager";
+export const IM = "im";
+export const ACTIVE_ITEM = "active-item";
+export const ALL_RIGHTS_RESERVED = "All rights reserved.";
+export const KEY_INSIGHTS = "Key insights";
+export const WELCOME_BACK = "Welcome back!";
+export const CUSTOMER_ROOT = "customer-page-root";
+export const DEVELOPMENT = "development";
+export const BASE_URL_V1 =
+  "https://invoice-manager-api-service.vercel.app/api/v1";
+export const ACTIONS = "Actions";
+export const EDIT = "Edit";
+export const DELETE = "Delete";
+export const ADD = "Add";
+export const PRIMARY = "primary";
+export const SECONDARY = "secondary";
+export const RED = "red";
+export const NEW_CUSTOMER = "New customer";
+export const EDIT_CUSTOMER = "Edit customer";
+export const CANCEL = "Cancel";
+export const SAVE = "Save";
+export const NAME = "Name";
+export const EMAIL = "Email";
+export const PHONE = "Phone";
+export const ENTER_NAME = "Enter the name";
+export const ENTER_EMAIL = "Enter the email address";
+export const ENTER_PHONE = "Enter the phone number";
+export const SUBMIT = "Submit";
+export const RIGHT_DRAWER = "Right drawer";
+export const REQUIRED = "required";
+export const MIN = "min";
+export const MAX = "max";
+export const SPECIAL_CHARS = "special_chars";
+export const INFO = "INFO";
+export const ERROR = "ERROR";
+export const CUSTOMERS_PAGE = "Customers Page";
+export const OK = "Ok";
+export const CLOSE = "Close";
+export const BUTTON = "button";
+export const PRODUCT_ROOT = "product-page-root";
+export const PRODUCTS_PAGE = "Products Page";
+export const NEW_PRODUCT = "New product";
+export const EDIT_PRODUCT = "Edit product";
+export const PRODUCT_NAME = "Product name";
+export const PRODUCT_RATE = "Product rate per item";
+export const PRODUCT_DESCRIPTION = "Product description";
+export const ENTER_PRODUCT_NAME = "Enter the product name";
+export const ENTER_PRODUCT_RATE = "Enter product rate per item";
+export const ENTER_PRODUCT_DESCRIPTION = "Enter the product description";
+export const INVOICE_ROOT = "invoice-page-root";
+export const INVOICES_PAGE = "Invoices Page";
+export const DASHBOARD = "Dashboard";
+export const INVOICE_ID = "invoice_id";
+export const INVOICE_DETAILS = "invoice_details";
+export const INVOICE_TOTAL_AMOUNT = "invoice_total_amount";
+export const INVOICE_DETAILS_PAGE = "Invoice Details Page";
+export const CREATE_INVOICE_PAGE = "Create Invoice Page";
+export const EDIT_INVOICE = "Edit invoice";
+export const NEW_INVOICE = "New invoice";
+export const CUSTOMER_NAME = "Customer name";
+export const ORDER_REQUIRED_BY_DATE = "Order required by date";
+export const ORDER_STATUS = "Order status";
+export const SELECT_CUSTOMER_NAME = "Select customer name";
+export const SELECT_PRODUCT_NAME = "Select product name";
+export const SELECT_ORDER_REQUIRED_BY_DATE = "Select order required by date";
+export const SELECT_ORDER_STATUS = "Select order status";
+export const RECEIVED = "RECEIVED";
+export const COMPLETED = "COMPLETED";
+export const PRODUCT_QUANTITY = "Product quantity";
+export const ENTER_PRODUCT_QTY = "Enter product quantity";
+export const AMOUNT = "Amount";
+export const PRODUCT_QTY = "product_qty";
+export const PRODUCT_NAME_SNAKE_CASE = "product_name";
+export const ADD_NEW_CUSTOMER = "Add new customer";
+export const ADD_NEW_PRODUCT = "Add new product";
+export const TOTAL_AMOUNT = "Total amount";
+
+//messages
+export const REQUIRED_FIELD = " should not be empty";
+export const INVALID_EMAIL = "Invalid email address";
+export const INVALID_PHONE = "Invalid phone number";
+export const NAME_EXISTS = "Name already exits.";
+export const PHONE_EXISTS = "Phone already exits.";
+export const EMAIL_EXISTS = "Email already exits.";
+export const ARE_YOU_SURE_CUSTOMER_DELETION =
+  "Are you sure you want to delete this customer?";
+export const INVOICE_MANAGER_DESC = "Managing invoices is now easy";
+export const PRODUCT_NAME_ALREADY_EXISTS = "Product name already exists";
+export const ARE_YOU_SURE_PRODUCT_DELETION =
+  "Are you sure you want to delete this product?";
+export const ARE_YOU_SURE_INVOICE_DELETION =
+  "Are you sure you want to delete this invoice?";
+export const NO_INVOICE_FOUND = "No invoice found";
+export const PLEASE_SELECT_PRODUCT =
+  "Please select at least one product to continue.";
+
+//regex
+export const SPECIAL_CHARS_REGEX = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+export const EMAIL_REGEX = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;

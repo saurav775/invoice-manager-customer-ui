@@ -11,9 +11,11 @@ const Loader = (props) => {
   const loaderContainerClasses = [
     "loader-container",
     fixedLoader ? "fixed-loader" : "",
-  ].join(" ").trim();
+  ]
+    .join(" ")
+    .trim();
   return (
-    <div className={loaderContainerClasses}>
+    <div className={loaderContainerClasses} data-testid="common-loader-test">
       <div className="spinner"></div>
     </div>
   );
