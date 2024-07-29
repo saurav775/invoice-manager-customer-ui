@@ -71,6 +71,7 @@ const TableUI = (props) => {
         </tr>
       </thead>
       <tbody>
+        {!rows?.length && <tr className="no-record-found">No record found.</tr>}
         {rows.map((row) => (
           <tr key={row[Object.keys(row)[0]]}>
             {columns.map((column, index) => (
